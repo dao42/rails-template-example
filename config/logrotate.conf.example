@@ -1,0 +1,13 @@
+# truncate your rails log every day
+# Usage:
+# `cp logrotate.conf.example /etc/logrotate.d/rails_template_example`
+/data/www/rails_template_example/current/log/*.log {
+  daily
+  missingok
+  rotate 7
+  compress
+  delaycompress
+  notifempty
+  copytruncate
+  su ruby ruby
+}
